@@ -1,0 +1,12 @@
+*~
+*.swp
+*.swo
+node_modules/
+dist/
+.cache/
+.jira-cli
+*.DS_STORE
+jest-junit
+coverage
+.idea/
+src/tailwind.generated.css

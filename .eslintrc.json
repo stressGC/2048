@@ -1,0 +1,75 @@
+{
+	"root": true,
+	"parser": "@typescript-eslint/parser",
+	"settings": {
+		"react": {
+			"version": "detect" // Tells eslint-plugin-react to automatically detect the version of React to use
+		}
+	},
+	"plugins": ["@typescript-eslint", "prefer-arrow"],
+	"extends": [
+		"eslint:recommended",
+		"plugin:@typescript-eslint/eslint-recommended",
+		"plugin:@typescript-eslint/recommended",
+		"plugin:import/errors",
+		"plugin:react/recommended",
+		"plugin:react-hooks/recommended",
+		"plugin:import/errors",
+		"plugin:import/warnings",
+		"plugin:import/typescript",
+		"prettier" // Disable every rules that can conflict with prettier
+	],
+	"parserOptions": {
+		"project": ["tsconfig.json"],
+		"ecmaFeatures": {
+			"jsx": true // Allows for the parsing of JSX
+		}
+	},
+	"rules": {
+		"@typescript-eslint/no-var-requires": "off", // Disallows the use of require statements except in import statements
+		"@typescript-eslint/naming-convention": [
+			"error",
+			{
+				"selector": "variableLike",
+				"format": ["camelCase", "snake_case", "PascalCase"], // Allow variables to be camelCase, snakeCase or pascalCase
+				"leadingUnderscore": "allow",
+				"custom": {
+					"regex": "^(any|Number|number|String|string|Boolean|boolean|Undefined|undefined)$", // Disable use of those keywords as variable names
+					"match": false
+				}
+			}
+		],
+		"@typescript-eslint/no-explicit-any": ["error"], // Disallow the use of "any"
+		"import/order": "off", // Disable errors regarding import order
+		"max-classes-per-file": "off", // Disable errors if multiple classes are declared in a single file
+		"sort-keys": "off", // Disable errors on object key sorting
+		"no-return-await": "error", // Disallow the usage of "return await ..."
+		"@typescript-eslint/no-floating-promises": "error", // Promises returned by functions must be handled appropriately
+		"@typescript-eslint/await-thenable": "error", // Disallows awaiting a value that is not a Thenable
+		"@typescript-eslint/explicit-function-return-type": "off", // Disable errors if a return type is not specified in a function
+		"@typescript-eslint/ban-types": [
+			"error",
+			{
+				"types": {
+					"object": false // Allow the type "object" to be used
+				}
+			}
+		],
+		"no-case-declarations": "off", // Allow to use variable declarations in switch cases
+		"prefer-const": "error", // Suggest using const when possible
+		"@typescript-eslint/prefer-for-of": "error", // Recommends a ‘for-of’ loop over a standard ‘for’ loop if the index is only used to access the array being iterated
+		"@typescript-eslint/explicit-module-boundary-types": "off", // Disable warnings if a return type is not specified in a function
+		"@typescript-eslint/array-type": ["error", { "default": "array-simple", "readonly": "array-simple" }], // Force the use of T[] for simple types and Array<T> for more complex types
+		"@typescript-eslint/consistent-type-definitions": ["error", "interface"], // Only allow "interface" to be used
+		"react/jsx-no-target-blank": "error", // Warn when using target="_blank" without rel="noreferrer"
+		"react/no-unescaped-entities": ["error", { "forbid": [">", "}"] }], // Prevent invalid characters from appearing in markup
+		"arrow-parens": "error", // Require parens in arrow function arguments
+		"react/display-name": "off", // Disable errors when React components aren't named
+		"react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
+		"react-hooks/exhaustive-deps": "error", // Force dependencies to be correctly set in hooks
+		"@typescript-eslint/no-unused-vars": "error", // Make sure no unused variables are declared
+		"no-unused-expressions": "off", // Make sure no unused expressions are declared
+		"function-call-argument-newline": ["error", "consistent"], // Enforce consistent line breaks between arguments of a function call
+		"@typescript-eslint/no-non-null-assertion": "error" // Make sure non-null assertions are not used
+	}
+}
