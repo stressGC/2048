@@ -13,7 +13,7 @@
 		"prettify": "prettier . --write",
 		"clean": "rm -rf dist .cache src/dist src/.cache src/config.ts .env",
 		"build": "run-s _build:*",
-		"_build:css": "tailwindcss build -o src/tailwind.generated.csss --minify",
+		"_build:css": "tailwindcss build -o src/tailwind.generated.css --minify",
 		"_build:parcel": "parcel build src/index.html --no-source-maps --no-cache",
 		"lint": "run-s _build:css _lint:*",
 		"_lint:src": "eslint 'src/**/*.{ts,tsx}' --max-warnings=0",
