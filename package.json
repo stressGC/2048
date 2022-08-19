@@ -17,7 +17,7 @@
 		"_build:parcel": "parcel build src/index.html --no-source-maps --no-cache",
 		"lint": "run-s _build:css _lint:*",
 		"_lint:src": "eslint 'src/**/*.{ts,tsx}' --max-warnings=0",
-		"typecheck": "tsc --diagnostics:*",
+		"typecheck": "tsc --diagnostics",
 		"check": "run-s lint typecheck"
 	},
 	"repository": {
