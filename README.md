@@ -21,3 +21,11 @@ npm run test:watch
 ## Enjoy
 
 You can use your keyboard arrows to play the game!
+
+## Roadmap
+
+-   [ ] Handle mobile players (responsiveness + swipe motions)
+-   [ ] Better design
+-   [ ] Fix score computation?
+-   [ ] Animations
+-   [ ] Cancel move?
