@@ -20,7 +20,7 @@
 		"prettier" // Disable every rules that can conflict with prettier
 	],
 	"parserOptions": {
-		"project": ["tsconfig.json"],
+		"project": ["tsconfig.json", "jest.config.js"],
 		"ecmaFeatures": {
 			"jsx": true // Allows for the parsing of JSX
 		}
